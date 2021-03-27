@@ -4,7 +4,70 @@
     padding: 0;
 }
 
+html {
+    box-sizing: border-box;
+}
+
+/* || Colors */
+:root {
+    --primary: gray;
+    --total: white;
+    --keys: white;
+    --clicked: lightgreen;
+}
+
 /* || Calculator */
-.calulator-keys {
+.calculator {
+    background: var(--primary);
+    padding: 10px;
+    width: 25%;
+    margin: 20vh auto;
+    border: thick solid black;
+    border-radius: 10px;
+    box-shadow: 0 10px 0 black;
+}
+
+.calculator-display {
+    font-size: 2vw;
+    background: var(--keys);
+    margin: 3px;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.calculator-keys {
     display: grid;
+    grid-gap: 1px;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.calculator-keys button {
+    background: var(--keys);
+    padding: 10px;
+    margin: 4px 2px;
+    outline: none;
+    border: thin solid black;
+    border-radius: 10px;
+    transition: 0.2s;
+    box-shadow: 0 5px 0 black;
+}
+
+.calculator-keys button:hover {
+    transform: translateY(2px);
+    box-shadow: 0 3px 0 black;
+}
+
+.calculator-keys button:active {
+    outline: none;
+    transform: translateY(4px);
+    box-shadow: 0 0 0 black;
+}
+
+.calculator-keys button:focus {
+    outline: none;
+}
+
+.key-equal {
+    grid-column: -2;
+    grid-row: 2 / span 4;
 }
